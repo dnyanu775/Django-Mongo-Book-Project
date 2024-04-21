@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+      .head{
+        text-align: center;
+        background-color: rgb(7, 7, 12);
+        padding-top: 10px;
+        padding-bottom: 15px;
+        margin-bottom: 0px;
+      }
+      .center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+      }
+      .options{
+        text-align: center;
+      }
+      .trademark{
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+  <h1 class="head" style="color: white;">
+    Welcome to the Books Collection
+</h1>
+    <div class="container">
+        <hr>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" style="font-weight: bold;" href="/home/">Project Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="/home/Register.html/" target="_blank">New User Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" style="font-weight: bold;" href="/allbooks/">All Books List</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="font-weight: bold;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Books Menu
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/addbookpage/" target="_blank">Add New Book</a></li>
+                      <li><a class="dropdown-item" href="/searchbook/" target="_blank">Search a Book by Id</a></li>
+                      <li><a class="dropdown-item" href="/searchforupdate/" target="_blank">Update Book Details</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/deletebook/" target="_blank">Delete A Book</a></li>
+                      <li><a class="dropdown-item" href="/loginpage/">Log Out</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search" action="/searchbookonid/" method="POST">
+                  {% csrf_token %}
+                  <input class="form-control me-2" type="search" id="bookid" name="bookid" placeholder="Search by Book id" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>              
+            </div>
+          </nav>
+        <br>       
+    </div> 
+      <h3 class="options" style="color: chartreuse;" style="font-weight: bold;">CRUD Operations</h1>         
+        <p class="options" style="font-weight: bold;">Add New Books to the books Collection from Books Menu's (Add New Book) Option</p> 
+        <p class="options" style="font-weight: bold;">Fetch Book Details from Books Menu's (Search Book by Id) Option</p>
+        <p class="options" style="font-weight: bold;">Update/Modify Book Details from Books Menu's (Update Book Details) Option</p>
+        <p class="options" style="font-weight: bold;">Delete a unwanted Book from Books Menu's ( Delete a Book ) Option </p>
+      <br><hr>
+    <img src="/static/lib4.gif" class="center" alt="library" height="250px">
+<br>
+    <p class="trademark">
+      Developed by Dnyaneshwar
+      <br> 
+      &copy; Dnyan Projects-2024
+  </p>
+    
+</body>
+</html>
